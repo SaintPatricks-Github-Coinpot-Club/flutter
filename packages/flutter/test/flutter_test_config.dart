@@ -43,12 +43,9 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) {
 
   if (_isLeakTrackingEnabled()) {
     LeakTesting.enable();
-
     LeakTracking.warnForUnsupportedPlatforms = false;
-
     LeakTesting.settings = LeakTesting.settings.withIgnored(
       createdByTestHelpers: true,
-      allNotGCed: true,
     );
   }
 
